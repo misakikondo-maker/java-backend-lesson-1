@@ -1,0 +1,20 @@
+{
+  "name": "Java Spring Boot Env",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-spring-boot"
+      ]
+    }
+  },
+  "forwardPorts": [8081],
+  "portsAttributes": {
+    "8081": {
+      "label": "Spring Boot App",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "chmod +x mvnw 2>/dev/null; echo 'SERVER_PORT=8081 ./mvnw spring-boot:run' > run.sh && chmod +x run.sh"
+}

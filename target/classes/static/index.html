@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaJava内定を出す会</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .question-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .question-section.active {
+            display: block;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .title-screen-h1 {
+            border-bottom: none;
+            font-size: 28px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.1s;
+            margin: 10px 0;
+            width: 80%;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .start-btn {
+            background-color: #f39c12;
+            font-size: 18px;
+            padding: 15px 30px;
+            margin-top: 20px;
+        }
+
+        .start-btn:hover {
+            background-color: #e67e22;
+        }
+
+        .next-btn {
+            background-color: #2ecc71;
+            margin-top: 30px;
+            display: none;
+        }
+
+        .next-btn:hover {
+            background-color: #27ae60;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #bdc3c7;
+            border-radius: 8px;
+            width: 70%;
+            margin-bottom: 15px;
+            text-align: center;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        input[type="number"]:focus {
+            border-color: #3498db;
+        }
+
+        .result-text {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            min-height: 30px;
+        }
+
+        .logo-img {
+            max-width: 200px;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <!-- タイトル画面 -->
+        <div id="title-screen" class="question-section active">
+            <!-- レバレジーズのロゴ（画像URLは必要に応じて変更してください） -->
+            <img src="./images.png" alt="Leverages" class="logo-img">
+
+            <h1 class="title-screen-h1">JavaJava内定を出す会による<br><span style="color: #f39c12;">Java研修</span></h1>
+            <p style="color: #7f8c8d; margin-bottom: 20px; font-weight: bold;">楽しみながらJavaの基礎を学ぼう！</p>
+
+            <button class="start-btn" onclick="nextQuestion('title-screen', 1)">研修をスタート！ 🚀</button>
+        </div>
+
+        <!-- 問1 -->
+        <div id="q1" class="question-section">
+            <h1>問1. 運勢を表示してみよう！</h1>
+            <button onclick="drawOmikuji()">おみくじを引く</button>
+            <div id="result1" class="result-text" style="color: #27ae60;">ボタンを押してね！</div>
+            <button id="next1" class="next-btn" onclick="nextQuestion(1, 2)">次の問題へ進む ➔</button>
+        </div>
+
+        <!-- 問2 -->
+        <div id="q2" class="question-section">
+            <h1>問2. 足し算をやってみよう！</h1>
+            <button onclick="add()">正解/不正解を判定</button>
+            <div id="result2" class="result-text" style="color: #2980b9;">ボタンを押してね！</div>
+            <button id="next2" class="next-btn" onclick="nextQuestion(2, 3)">次の問題へ進む ➔</button>
+        </div>
+
+        <!-- 問3 -->
+        <div id="q3" class="question-section">
+            <h1>問3. if文を作ってみよう！</h1>
+            <input type="number" id="numInput" placeholder="数字を入力">
+            <br>
+            <button onclick="if_block()">正解/不正解を判定</button>
+            <div id="result3" class="result-text" style="color: #f39c12;">数値を入力してね！</div>
+            <button id="next3" class="next-btn" onclick="nextQuestion(3, 4)">次の問題へ進む ➔</button>
+        </div>
+
+        <!-- 問4 -->
+        <div id="q4" class="question-section">
+            <h1>問4. for文を作ってみよう！</h1>
+            <button onclick="for_block()">正解/不正解を判定</button>
+            <div id="result4" class="result-text" style="color: #e74c3c;">ボタンを押してね！</div>
+            <button id="next4" class="next-btn" onclick="nextQuestion(4, 5)">最後の問題へ ➔</button>
+        </div>
+
+        <!-- 応用問題 -->
+        <div id="q5" class="question-section">
+            <h1>応用問題. 最大値を求めてみよう！</h1>
+            <button onclick="final_task()">正解/不正解を判定</button>
+            <div id="result5" class="result-text" style="color: #8e44ad;">ボタンを押してね！</div>
+            <button id="next5" class="next-btn" onclick="alert('全問クリアおめでとうございます！🎉')">完了 🎉</button>
+        </div>
+    </div>
+
+    <script>
+        // 画面を切り替える共通関数（タイトル画面からも使用）
+        function nextQuestion(current, next) {
+            document.getElementById(current === 'title-screen' ? 'title-screen' : `q${current}`).classList.remove('active');
+            document.getElementById(`q${next}`).classList.add('active');
+        }
+
+        function showNextButton(step) {
+            document.getElementById(`next${step}`).style.display = 'inline-block';
+        }
+
+        function hideNextButton(step) {
+            document.getElementById(`next${step}`).style.display = 'none';
+        }
+
+        function checkIsCorrect(data) {
+            return data.isCorrect === true || (data.result && !String(data.result).includes('不正解'));
+        }
+
+        async function drawOmikuji() {
+            try {
+                const response = await fetch('/api/omikuji');
+                const data = await response.json();
+                console.log(data);
+                document.getElementById('result1').textContent = data.result;
+                showNextButton(1);
+            } catch (e) {
+                document.getElementById('result1').textContent = "不正解";
+            }
+        }
+
+        async function add() {
+            try {
+                const response = await fetch('/api/add');
+                const data = await response.json();
+                document.getElementById('result2').textContent = data.result;
+
+                if (data.result === 9) {
+                    showNextButton(2);
+                } else {
+                    hideNextButton(2);
+                }
+            } catch (e) {
+                document.getElementById('result2').textContent = "不正解";
+                hideNextButton(2);
+            }
+        }
+
+        async function if_block() {
+            const inputValue = document.getElementById('numInput').value;
+            if (!inputValue) {
+                document.getElementById('result3').textContent = "数字を入力してください！";
+                hideNextButton(3);
+                return;
+            }
+            try {
+                // バッククォート ( ` ) で囲み、?num=${inputValue} を追加
+                const response = await fetch(`/api/if_brock?num=${inputValue}`);
+                const data = await response.json();
+                document.getElementById('result3').textContent = data.result;
+
+                if (checkIsCorrect(data)) {
+                    showNextButton(3);
+                } else {
+                    hideNextButton(3);
+                }
+            } catch (e) {
+                document.getElementById('result3').textContent = "不正解";
+                hideNextButton(3);
+            }
+        }
+
+        async function for_block() {
+            try {
+                const response = await fetch('/api/for_block');
+                const data = await response.json();
+                document.getElementById('result4').textContent = data.result;
+
+                if (data.result === 100) {
+                    showNextButton(4);
+                } else {
+                    hideNextButton(4);
+                }
+            } catch (e) {
+                document.getElementById('result4').textContent = "不正解";
+                hideNextButton(4);
+            }
+        }
+
+        async function final_task() {
+            try {
+                const response = await fetch('/api/final');
+                const data = await response.json();
+                document.getElementById('result5').textContent = data.result;
+
+                if (data.result === 953) {
+                    showNextButton(5);
+                } else {
+                    hideNextButton(5);
+                }
+            } catch (e) {
+                document.getElementById('result5').textContent = "不正解";
+                hideNextButton(5);
+            }
+        }
+    </script>
+</body>
+
+</html>
