@@ -26,13 +26,9 @@ public class Fainal {
         int result = 0;
 
      // 問題：for文とif文を使って、number_box[i]に100個入っている最大値を求めてみよう！求めた最大値はresultに入れてください！number[0]には42,number[1]には873、、、、、が入っているよ！
-
-        for(int i = 0;i<=99; i++){
-            if(result < number_box[i]){
-                result = number_box[i];
-            }
-        }
+    /* 
         
+        */
         return Map.of("result", result);
     }
 }

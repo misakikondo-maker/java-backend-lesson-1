@@ -24,11 +24,11 @@ public class If_Program {
         // String型のresultMessage に myName(自分の名前)を上書きするif文を完成させよう！
         //画面に不正解以外の文字列が出たら次の問題へ行けます！
         // ↓ ここのコメントアウト（//）を外してコードを書く
-        
-        if (num >= 25 ) {
-            resultMessage = myName;
+        /* 
+        if () {
+          
         }
-
+        */
         return Map.of("result", resultMessage);
     }
 }

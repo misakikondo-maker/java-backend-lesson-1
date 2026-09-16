@@ -9,15 +9,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api")
 public class Add_program{
-
+/* 
     @GetMapping("/add")
     public Map<String, Integer> add_number() {
-        // 問題：6+3の足し算が出来るように書き換えよう！合計値は変数sumに入れてね！（ヒント：int型の変数はいくつ必要でしょう？）
-        int a = 6;
-        int b = 3;
-
-        int sum = a + b;
+        // 問題：6+3の足し算が出来るように書き換えよう！合計値は変数sumに入れてね！（ヒント：int型の変数はいくつ必要でしょうか？）
         
         return Map.of("result", sum);
     }
+        */
 }
