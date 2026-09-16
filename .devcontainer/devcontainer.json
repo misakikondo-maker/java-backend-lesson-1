@@ -16,5 +16,5 @@
       "onAutoForward": "notify"
     }
   },
-  "postCreateCommand": "chmod +x mvnw 2>/dev/null; echo 'SERVER_PORT=8081 ./mvnw spring-boot:run' > run.sh && chmod +x run.sh"
+  "postCreateCommand": "echo 'SERVER_PORT=8081 ./apache-maven-3.9.9/bin/mvn spring-boot:run' > run.sh && chmod +x run.sh apache-maven-3.9.9/bin/mvn"
 }
