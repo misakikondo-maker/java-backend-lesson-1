@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 /* 
     @GetMapping("/for_block")
     public Map<String, Integer> getOmikuji() {
-        // 問題：for文を用いて1を100回足して100を作ってみよう！（変数はsum1つでできます！）
+        // 問題：for文を用いて1を100回足して100を作ってみましょう！（変数はsum1つでできます！）
         int sum = 0;
 
         for(int i=0;){

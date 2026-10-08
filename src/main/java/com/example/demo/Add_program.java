@@ -12,7 +12,7 @@ public class Add_program{
 /* 
     @GetMapping("/add")
     public Map<String, Integer> add_number() {
-        // 問題：6+3の足し算が出来るように書き換えよう！合計値は変数sumに入れてね！（ヒント：int型の変数はいくつ必要でしょうか？）
+        // 問題：6+3の足し算が出来るように書き換えましょう！合計値はint型の変数sumに入れてください！（ヒント：int型の変数はいくつ必要でしょうか？）
         
         return Map.of("result", sum);
     }

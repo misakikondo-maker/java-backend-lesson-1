@@ -11,7 +11,7 @@ public class OmikujiController {
 /* 
    @GetMapping("/omikuji")
     public Map<String, String> getOmikuji() {
-        // 問題：String型の変数resultに運勢を代入し文字を表示してみよう！
+        // 問題：String型の変数resultに運勢を代入し文字を表示してみましょう！
         return Map.of("result", result);
     }
    */    

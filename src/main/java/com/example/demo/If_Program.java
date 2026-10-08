@@ -21,7 +21,7 @@ public class If_Program {
         String myName = "自分の名前"; 
 
         // 問題2：もし入力された数値(num)が「25以上」だったら、
-        // String型のresultMessage に myName(自分の名前)を上書きするif文を完成させよう！
+        // String型のresultMessage に myName(自分の名前)を上書きするif文を完成させましょう！
         //画面に不正解以外の文字列が出たら次の問題へ行けます！
         // ↓ ここのコメントアウト（//）を外してコードを書く
         /* 
