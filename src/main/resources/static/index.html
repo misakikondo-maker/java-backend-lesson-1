@@ -251,7 +251,6 @@
                 return;
             }
             try {
-                // バッククォート ( ` ) で囲み、?num=${inputValue} を追加
                 const response = await fetch(`/api/if_brock?num=${inputValue}`);
                 const data = await response.json();
                 document.getElementById('result3').textContent = data.result;
