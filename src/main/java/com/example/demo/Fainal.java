@@ -12,7 +12,7 @@ public class Fainal {
 
    @GetMapping("/final")
     public Map<String, Integer> add_number() {
-     int[] number_box = new int[]{42, 873, 15, 624, 91, 305, 518, 76, 239, 942,
+     int[] numberBox = new int[]{42, 873, 15, 624, 91, 305, 518, 76, 239, 942,
     18, 456, 789, 23, 671, 104, 882, 347, 59, 713,
     56, 921, 334, 8, 492, 615, 27, 836, 149, 705,
     98, 512, 743, 65, 281, 907, 439, 14, 658, 320,
@@ -25,7 +25,7 @@ public class Fainal {
 
         int result = 0;
 
-     // 問題：for文とif文を使って、number_box[i]に100個入っている最大値を求めてみましょう！求めた最大値はresultに入れてください！number[0]には42,number[1]には873、、、、、が入っています！
+     // 問題：for文とif文を使って、numberBox[i]に100個入っている最大値を求めてみましょう！求めた最大値はresultに入れてください！numberBox[0]には42,numberBox[1]には873、、、、、が入っています！
     /* 
         
         */
